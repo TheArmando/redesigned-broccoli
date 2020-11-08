@@ -1,1 +1,37 @@
-<mxfile host="app.diagrams.net" modified="2020-11-08T21:44:29.388Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36" version="13.9.2" etag="STSs2_dtMazAxsmcwYYo" type="github"><diagram id="wwOMsZCvx-Wxzxr1tbDI">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-11-08T22:10:25.920Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36" etag="bNZqlQQtdBExpLI4PIgD" version="13.9.2" type="github">
+  <diagram id="wwOMsZCvx-Wxzxr1tbDI" name="Page-1">
+    <mxGraphModel dx="1642" dy="1005" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="-XV1nC7xtgiHMTo4J4G4-1" target="-XV1nC7xtgiHMTo4J4G4-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-1" value="Upstream Service" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.083;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="-XV1nC7xtgiHMTo4J4G4-2" target="-XV1nC7xtgiHMTo4J4G4-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-2" value="Country Origin Validator" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-3" value="codename&amp;nbsp;&lt;i&gt;redesigned-broccoli&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="420" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-8" value="&lt;h1&gt;Upstream Service&lt;/h1&gt;&lt;p&gt;Makes synchronous API requests to our microservice providing&lt;/p&gt;&lt;p&gt;1. IP address to assess&lt;/p&gt;&lt;p&gt;2. White list of countries&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="190" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-10" value="&lt;h1&gt;Country Origin Validator&lt;/h1&gt;&lt;div&gt;Our microservice should return a boolean to the upstream indicating whether or not the IP address in question falls within the provided list of whitelisted countries&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="328" y="150" width="195" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-11" value="Maxmind API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="350" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-XV1nC7xtgiHMTo4J4G4-14" value="&lt;h1&gt;Design Considerations&lt;/h1&gt;&lt;p&gt;Based on the requirements provided we&#39;ll want this service to be as light-weight as possible since it appears to be part of a broader architecture for authenticating functions key to the business.&lt;/p&gt;&lt;p&gt;In this initial implementation we&#39;ll be calling a 3rd party API to provide information on the IP address given from the upstream on each request from the upstream. So we&#39;re assuming that the 3rd party API has an acceptable level of latency for this network request, and we&#39;re not throttled at all by the number of requests we can make to this service.&lt;/p&gt;&lt;p&gt;If that&#39;s not the case, In future iterations we&#39;ll need to determine if it&#39;s possible to cache the information from the 3rd party to limit the amount of API requests to the 3rd party.&amp;nbsp;&lt;/p&gt;&lt;p&gt;We could achieve this by doing routine bulk requests to the API in question and keep a DB scoped for this microservice to keep the IP address mappings, and/or caching API requests to the 3rd party to reduce unnecessary duplicate API requests. I&#39;d need to do further research on how IP addresses are assigned to (and how long their assigned for) to&amp;nbsp; gauge the value in this approach. Also I&#39;d like to determine if there are static IP addresses that are guaranteed to go to a certain country.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="490" width="380" height="430" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
