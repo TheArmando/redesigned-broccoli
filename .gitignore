@@ -16,4 +16,7 @@
 
 .env
 
+db.zip
+/tmp
+
 GeoLite2-Country-CSV*/

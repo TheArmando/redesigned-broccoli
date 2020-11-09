@@ -19,7 +19,7 @@ const geoLiteURLprefix = "https://download.maxmind.com/app/geoip_download?editio
 const geoLiteURLsuffix = "&suffix=zip"
 
 const zipFileName = "db.zip"
-const unzipDir = "/tmp/"
+const unzipDir = "./tmp/"
 const csvFileNameIPv4 = "GeoLite2-Country-Blocks-IPv4.csv"
 const csvFileNameIPv6 = "GeoLite2-Country-Blocks-IPv6.csv"
 const csvFileNameCountry = "GeoLite2-Country-Locations-en.csv"
